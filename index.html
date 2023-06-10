@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mt-3 mb-3">CRUD Operations System</h2>
+
+
+            <input type="text" class="form form-control  mx-auto" placeholder="Product Name" id="productName">
+            <div class="cost d-flex px-0 mt-3">
+                <input type="number" onkeyup="totalPrice();"  class="form form-control  me-2" placeholder="Product Price" id="productPrice">
+                <input type="number" onkeyup="totalPrice();"  class="form form-control me-2" placeholder="Product Taxes" id="productTaxes">
+                <input type="number" onkeyup="totalPrice();"  class="form form-control me-2" placeholder="Product ADS" id="productAds">
+                <input type="number" onkeyup="totalPrice();" class="form form-control  " placeholder="Product Discount" id="productDiscount">
+            </div>
+
+            <div class=" d-flex px-0 mt-3 align-items-center">
+                <div class="tot w-50 d-flex align-items-center border-2 rounded-2 bg-danger me-2" id="toty">
+                    <p class="mb-0 ms-2 w-100">Total Price:
+                <span  class=" "  id="productTotal"></span>
+
+                    </p>
+                </div>
+                <input type="number" class="form form-control me-2" placeholder="Product Count Number" id="productCount">
+                <input type="text" class="form form-control me-2" placeholder="Product Category" id="productCategory">
+            </div>
+
+            <textarea name=""  class="form form-control mt-3"  id="productDescription" cols="30" rows="5" placeholder="Product Description"></textarea>
+            <button class="btn btn-info d-block mt-3" onclick="addProducts();"id='addProduct'>Add Product</button>
+            <button class="btn btn-warning d-none mt-3" onclick="updateProduct();" id="updateProduct">Update Product</button>
+
+            <input type="text" class="w-75 m-auto form form-control mt-4 " id="search" oninput="search(this.value);" placeholder="Search By Name...">
+            <button class="btn btq  btn-sm btn-outline-success mt-4  " id="btnSearch" onclick="chooseSearchType();">Search By Category</button>
+            <button class="btn btq  btn-sm btn-outline-danger mt-4 d-none " id="btnSearch2" onclick="chooseSearchTypePrimary();">Search By Name</button>
+        
+            
+            <table class="table text-center  mt-3">
+
+                <thead>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>ADS</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
